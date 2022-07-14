@@ -1,30 +1,33 @@
-import Tasks from './components/Tasks';
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Tasks from './components/Tasks';
+import Home from './pages/Home';
+import About from './pages/About';
+import Error from './pages/Error';
 
 const App = () => {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      text: 'Burn 2nd deg of unsp site right lower limb, ex ank/ft, sqla',
+      text: 'Tidy up',
       day: '20/5/2022',
       reminder: false,
     },
     {
       id: 2,
-      text: 'Other specified dorsopathies, occipito-atlanto-axial region',
+      text: 'Go buy groceries',
       day: '26/9/2021',
       reminder: false,
     },
     {
       id: 3,
-      text: 'Rheu vasculitis w rheumatoid arthritis of unsp shoulder',
+      text: 'Do some work',
       day: '5/8/2021',
       reminder: false,
     },
     {
       id: 4,
-      text: 'Lacerat flexor musc/fasc/tend l thm at forarm lv, sequela',
+      text: 'Do homework',
       day: '29/7/2021',
       reminder: false,
     },
@@ -46,10 +49,18 @@ const App = () => {
   return (
     <Router>
       <div className='app'>
+        <nav>
+          <Link to='/'>Home</Link>
+          <Link to='/about'>About</Link>
+        </nav>
         <Routes>
-          <Route path='/' />
+          <Route path='/' element={<Home />} />
+          <Route path='/about/' element={<About />} />
+          <Route path='/about/:topic' element={<About />} />
+          <Route path='*' element={<Error />} />
         </Routes>
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+        <footer>This is footer</footer>
       </div>
     </Router>
   );
