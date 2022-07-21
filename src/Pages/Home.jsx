@@ -1,6 +1,6 @@
 import React from 'react';
-import Tasks from '../components/Tasks';
 import { useState } from 'react';
+import Tasks from '../components/Tasks';
 
 const Home = () => {
   const [tasks, setTasks] = useState([
@@ -31,10 +31,19 @@ const Home = () => {
   ]);
   // setTasks([...tasks, {}])
 
+  // Add Task
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newTask = { id, ...task };
+    setTasks([...tasks, newTask]);
+  };
+
+  // Delete Task
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  // Toggle Reminder
   const toggleReminder = (id) => {
     setTasks(
       tasks.map((task) =>
@@ -43,7 +52,14 @@ const Home = () => {
     );
   };
   return (
-    <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+    <>
+      <Tasks
+        tasks={tasks}
+        onDelete={deleteTask}
+        onToggle={toggleReminder}
+        onAddTask={addTask}
+      />
+    </>
   );
 };
 
