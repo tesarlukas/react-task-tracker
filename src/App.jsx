@@ -8,7 +8,8 @@ const App = () => {
     <Router>
       <div className='app'>
         <nav>
-          <div className='logo'>TrackerApp |</div>
+          <div className='logo'>TrackerApp</div>
+          <div className='separator'>|</div>
           <Link to='/'>Home</Link>
           <Link to='/about'>About</Link>
         </nav>
