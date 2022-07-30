@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import React from 'react';
+import { FocusTaskContextProvider } from './context/index';
 import Home from './pages/Home';
 import About from './pages/About';
 import Error from './pages/Error';
@@ -17,10 +18,24 @@ const App = () => {
           <Link to='/focus'>Focus</Link>
         </nav>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route
+            path='/'
+            element={
+              <FocusTaskContextProvider>
+                <Home />
+              </FocusTaskContextProvider>
+            }
+          />
           <Route path='/about/' element={<About />} />
           <Route path='/about/:topic' element={<About />} />
-          <Route path='/focus/' element={<Focus />} />
+          <Route
+            path='/focus/'
+            element={
+              <FocusTaskContextProvider>
+                <Focus />
+              </FocusTaskContextProvider>
+            }
+          />
           <Route path='*' element={<Error />} />
         </Routes>
         <footer>This is footer</footer>

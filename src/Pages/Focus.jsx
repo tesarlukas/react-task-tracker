@@ -1,7 +1,10 @@
 import React from 'react';
+import { useContext } from 'react';
+import { FocusTaskContext } from '../context';
 
 const Focus = () => {
-  return <div>Focus task</div>;
+  const { focusTask } = useContext(FocusTaskContext);
+  return <div>{focusTask.text}</div>;
 };
 
 export default Focus;
