@@ -14,7 +14,7 @@ const Button = ({ color, text, onClick }) => {
 
 Button.defaultProps = {
   color: 'steelblue',
-  text: 'cringe',
+  text: 'Click me',
   onClick: () => {
     console.log('Function is missing');
   },

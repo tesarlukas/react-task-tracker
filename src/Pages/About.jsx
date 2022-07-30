@@ -9,7 +9,7 @@ const About = () => {
     <div>
       {topic ? `This is the page about ${topic}` : 'This is the about page'}
       <button className='btn' onClick={() => navigate('/')}>
-        Go back
+        Back
       </button>
     </div>
   );

@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": 1,
+      "text": "Tidy up",
+      "day": "20/5/2022",
+      "reminder": false
+    },
+    {
+      "id": 2,
+      "text": "Go buy groceries",
+      "day": "26/9/2021",
+      "reminder": false
+    },
+    {
       "id": 3,
       "text": "Do some work",
       "day": "5/8/2021",
@@ -11,18 +23,6 @@
       "text": "Do homework",
       "day": "29/7/2021",
       "reminder": false
-    },
-    {
-      "text": "Tak test",
-      "day": "Jul 7th at 8:30",
-      "reminder": false,
-      "id": 5
-    },
-    {
-      "text": "adsdasd",
-      "day": "asdasd",
-      "reminder": false,
-      "id": 6
     }
   ]
 }
