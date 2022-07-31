@@ -1,16 +1,23 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import NavButtons from '../components/NavButtons';
 
 const About = () => {
-  const navigate = useNavigate();
   const { topic } = useParams();
+  const containerStyle = {
+    border: 'none',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '20px',
+  };
 
   return (
-    <div>
-      {topic ? `This is the page about ${topic}` : 'This is the about page'}
-      <button className='btn' onClick={() => navigate('/')}>
-        Back
-      </button>
+    <div className='container' style={containerStyle}>
+      <h1 className='text-center'>About This Application</h1>
+      <p>
+        This is an application serving as a simple Task Tracker application.
+      </p>
+      <NavButtons />
     </div>
   );
 };
