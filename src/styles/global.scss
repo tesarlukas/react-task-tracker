@@ -152,6 +152,14 @@ label {
   justify-content: space-between;
 }
 
+.page-error{
+  min-height: calc(100vh - 55px - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 footer {
   margin-top: 30px;
   text-align: center;
