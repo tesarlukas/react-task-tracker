@@ -4,18 +4,22 @@ import { FocusTaskContext } from '../context/index';
 const Task = ({ task, onDelete, onToggle }) => {
   const { setFocusTask } = useContext(FocusTaskContext);
 
+  const onFocus = (task) => {
+    alert('Your focus has been set to this task');
+    setFocusTask(task);
+  };
+
   return (
     <div
       className={`task ${task.reminder ? 'reminder' : ''}`}
       onDoubleClick={() => onToggle(task.id)}
     >
-      {/* <div className={'task' + task.reminder ? ' reminder' : ''} onDoubleClick={() => onToggle(task.id)}> */}
       <h3>
-        {task.text}{' '}
+        {task.text}
         <div>
           <i
             className='fas fa-check'
-            onClick={() => setFocusTask(task)}
+            onClick={() => onFocus(task)}
             style={{ color: 'blue', cursor: 'pointer' }}
           />
           <i
