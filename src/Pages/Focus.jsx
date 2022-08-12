@@ -6,8 +6,14 @@ import { FocusTaskContext } from '../context';
 const Focus = () => {
   const { focusTask } = useContext(FocusTaskContext);
 
+  const containerStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  };
+
   return (
-    <div className='container' style={{ border: 'none' }}>
+    <div className='container' style={containerStyles}>
       <h1 className='text-center'>Your main focus today is</h1>
       <div className='task' style={{ margin: '20px 5px' }}>
         {focusTask.text ? (
